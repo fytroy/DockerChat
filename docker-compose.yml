@@ -1,0 +1,21 @@
+services:
+  # The Chat Server
+  chat_app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - chat_data:/app/instance
+
+  # The Message Broker (Memory Store)
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  chat_data:
