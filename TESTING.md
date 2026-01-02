@@ -1,35 +1,35 @@
-# Quick Test Guide
+ Quick Test Guide
 
-## Running the Tests
+ Running the Tests
 
-### 1. Make sure the app is running
+ 1. Make sure the app is running
 ```bash
 docker-compose up -d
 ```
 
-### 2. Install test dependencies (one-time setup)
+ 2. Install test dependencies (one-time setup)
 ```bash
 pip install python-socketio[client] requests python-engineio
 ```
 
-### 3. Run the test suite
+ 3. Run the test suite
 ```bash
 python test_chat.py
 ```
 
-## What Gets Tested
+ What Gets Tested
 
 1. ✅ Server connectivity
 2. ✅ API endpoints (rooms, users, messages)
 3. ✅ Single user connection
 4. ✅ User joining rooms
 5. ✅ Sending/receiving messages
-6. ✅ **Two users chatting simultaneously** 👥
+6. ✅ Two users chatting simultaneously 👥
 7. ✅ Message persistence in database
 8. ✅ Multiple room support
 9. ✅ Typing indicators
 
-## Expected Output
+ Expected Output
 
 ```
 🧪 PROCHAT - COMPREHENSIVE TEST SUITE
@@ -39,7 +39,7 @@ python test_chat.py
 📈 SUCCESS RATE: 100.0%
 ```
 
-## Two-User Chat Simulation
+ Two-User Chat Simulation
 
 The test automatically simulates Alice and Bob chatting:
 
@@ -52,17 +52,17 @@ Bob: Awesome! It's working perfectly! ✨
 
 Both users receive all messages in real-time!
 
-## Viewing Detailed Results
+ Viewing Detailed Results
 
 See [TEST_RESULTS.md](TEST_RESULTS.md) for complete test report.
 
-## Troubleshooting
+ Troubleshooting
 
-**Problem:** Tests fail to connect  
-**Solution:** Make sure docker containers are running (`docker ps`)
+Problem: Tests fail to connect  
+Solution: Make sure docker containers are running (`docker ps`)
 
-**Problem:** Import errors  
-**Solution:** Install dependencies: `pip install python-socketio[client] requests`
+Problem: Import errors  
+Solution: Install dependencies: `pip install python-socketio[client] requests`
 
-**Problem:** Database errors  
-**Solution:** Restart containers: `docker-compose restart`
+Problem: Database errors  
+Solution: Restart containers: `docker-compose restart`
